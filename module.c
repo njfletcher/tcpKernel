@@ -1,19 +1,19 @@
-#include <linux/init.h> 
-#include <linux/module.h> 
-#include <linux/printk.h> 
-  
-static int __init tcp_init(void) 
+#include <linux/init.h> /* Needed for the macros */ 
+#include <linux/module.h> /* Needed by all modules */ 
+#include <linux/printk.h> /* Needed for pr_info() */ 
+ 
+static int __init hello_2_init(void) 
 { 
-    pr_info("tcp loaded\n"); 
-    return 0; 
+	    pr_info("Hello, world 2\n"); 
+	        return 0; 
 } 
  
-static void __exit tcp_exit(void) 
+static void __exit hello_2_exit(void) 
 { 
-    pr_info("tcp unloaded \n"); 
+	    pr_info("Goodbye, world 2\n"); 
 } 
  
-module_init(tcp_init); 
-module_exit(tcp_exit); 
+module_init(hello_2_init); 
+module_exit(hello_2_exit); 
  
 MODULE_LICENSE("GPL");
