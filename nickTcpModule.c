@@ -1,19 +1,19 @@
-#include <linux/init.h> /* Needed for the macros */ 
-#include <linux/module.h> /* Needed by all modules */ 
-#include <linux/printk.h> /* Needed for pr_info() */ 
+#include <linux/init.h> 
+#include <linux/module.h> 
+#include <linux/printk.h>
  
-static int __init hello_2_init(void) 
+static int __init tcp_init(void) 
 { 
-	    pr_info("Hello, world 2\n"); 
+	    pr_info("tcp init\n"); 
 	        return 0; 
 } 
  
-static void __exit hello_2_exit(void) 
+static void __exit tcp_exit(void) 
 { 
-	    pr_info("Goodbye, world 2\n"); 
+	    pr_info("tcp exit\n"); 
 } 
  
-module_init(hello_2_init); 
-module_exit(hello_2_exit); 
+module_init(tcp_init); 
+module_exit(tcp_exit); 
  
 MODULE_LICENSE("GPL");
