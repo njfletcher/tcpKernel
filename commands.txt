@@ -1,0 +1,6 @@
+obj-m := simple_module.o
+
+module add arm-rpi
+LINUX_SOURCE=path to your Linux kernel source code
+
+make -C $LINUX_SOURCE ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- M=$PWD modules
